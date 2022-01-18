@@ -36,17 +36,7 @@ var ghfix = {
 				verify[x].value = match;
 			}
 		}
-	},
-
-	int: null,
-
-	// Account for url switching and stuff
-	loop: function() {
-		ghfix.main();
-		this.int = setInterval(function() {
-			ghfix.main();
-		}, 3000);
 	}
 }
 
-ghfix.loop();
+ghfix.main();
