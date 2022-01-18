@@ -24,7 +24,7 @@ var ghfix = {
 		var button = e.getElementsByTagName("BUTTON");
 		for (var x = 0; x < button.length; x++) {
 			button[x].disabled = false;
-			button.innerText = "Yes, do the thing please"
+			button[x].innerHTML = "Yes, do the thing please";
 		}
 
 		// Github embeds input inside para elem
@@ -36,11 +36,17 @@ var ghfix = {
 				verify[x].value = match;
 			}
 		}
+	},
+
+	int: null,
+
+	// Account for url switching and stuff
+	loop: function() {
+		ghfix.main();
+		this.int = setInterval(function() {
+			ghfix.main();
+		}, 3000);
 	}
 }
 
-// Account for url switching stuff
-ghfix.main();
-setInterval(function() {
-	ghfix.main();
-}, 3000);
+ghfix.loop();
