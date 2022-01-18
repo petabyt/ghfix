@@ -29,7 +29,6 @@ var ghfix = {
 
 		// Github embeds input inside para elem
 		var verify = e.getElementsByTagName("INPUT");
-		console.log(verify);
 		for (var x = 0; x < verify.length; x++) {
 			if (verify[x].name == "verify" || (
 				verify[x].getAttribute("aria-label") != null &&
@@ -40,4 +39,8 @@ var ghfix = {
 	}
 }
 
+// Account for url switching stuff
 ghfix.main();
+setInterval(function() {
+	ghfix.main();
+}, 3000);
