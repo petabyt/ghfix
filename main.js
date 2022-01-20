@@ -39,4 +39,6 @@ var ghfix = {
 	}
 }
 
-ghfix.main();
+setInterval(function() {
+	ghfix.main();
+}, 4000);
